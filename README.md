@@ -5,7 +5,7 @@ Project is contributed by:
 - Tokesi Lukynawa
 - Felicio Balamitta Putra
 
-Full findings documentation is [documented here](https://drive.google.com/file/d/1-7a0JepA1TmkJLKAD3YcUg8rdDoq0VRr/view?usp=sharing)
+Temuan penilitian di dokumentasikan [disini.](https://drive.google.com/file/d/1-7a0JepA1TmkJLKAD3YcUg8rdDoq0VRr/view?usp=sharing)
 
 ## 1. Overview
 
