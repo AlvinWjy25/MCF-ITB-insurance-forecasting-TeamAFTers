@@ -72,7 +72,7 @@ Beberapa masalah utama yang ditemukan pada data sebelum pemodelan adalah:
 - Terdapat missing value pada beberapa kolom kategorikal.
 - Tanggal pembayaran klaim tidak dipakai sebagai fitur karena bersifat leakage: informasi ini tidak tersedia saat prediksi dilakukan di masa depan.
 
-Untuk mengatasi hal tersebut, notebook melakukan beberapa langkah berikut:
+Untuk mengatasi hal tersebut, peneliti melakukan beberapa langkah berikut:
 
 - konversi tanggal ke format datetime,
 - pembuatan feature baru seperti:
@@ -103,7 +103,7 @@ Interpretasi bisnis:
 
 ### 4.2 Distribusi klaim sangat tidak seimbang
 
-Nilai klaim cenderung mengikuti pola right-skewed, sehingga model yang sensitif terhadap distribusi data dapat menghasilkan prediksi yang kurang stabil. Karena itu, notebook memprioritaskan model tree-based dan transformasi target yang lebih robust.
+Nilai klaim cenderung mengikuti pola right-skewed, sehingga model yang sensitif terhadap distribusi data dapat menghasilkan prediksi yang kurang stabil. Karena itu, peneliti memprioritaskan model tree-based dan transformasi target yang lebih robust.
 
 ### 4.3 Variabel klinis dan demografis berpengaruh penting
 
@@ -126,7 +126,7 @@ Fitur lag dan rolling statistics seperti `lag_1`, `lag_3`, `rolling_mean_2`, `ro
 
 ## 5. Modelling Approach
 
-Notebook membandingkan beberapa model machine learning untuk memprediksi claim severity, frequency, dan total claim. Model yang dipertimbangkan antara lain:
+Penliti membandingkan beberapa model machine learning untuk memprediksi claim severity, frequency, dan total claim. Model yang dipertimbangkan antara lain:
 
 - Random Forest Regressor (RFR)
 - XGBoost Regressor
@@ -142,6 +142,8 @@ Metode evaluasi yang dipakai adalah:
 - MAPE (Mean Absolute Percentage Error) sebagai metrik utama,
 - RMSE, MAE, dan R2 juga dipakai sebagai pendukung evaluasi.
 
+- Skor MAPE perolehan di Kaggle Leaderboard: 30.8095, dengan peringkat 171 dari 269 pada Akhir Test
+
 ### 5.2 Strategi yang digunakan
 
 - Train/test split berdasarkan timeline agar tidak terjadi data leakage.
@@ -154,7 +156,7 @@ Metode evaluasi yang dipakai adalah:
 
 ## 6. Results & Model Comparison
 
-Dari hasil notebook, model berbasis gradient boosting (XGBoost, LightGBM, CatBoost) menunjukkan performa yang paling kompetitif untuk prediksi severity dan frequency dibandingkan model lain. Random Forest juga cukup baik, tetapi cenderung kurang optimal dibandingkan model boosting yang lebih adaptif terhadap pola temporal dan non-linear.
+Dari hasil, model berbasis gradient boosting (XGBoost, LightGBM, CatBoost) menunjukkan performa yang paling kompetitif untuk prediksi severity dan frequency dibandingkan model lain. Random Forest juga cukup baik, tetapi cenderung kurang optimal dibandingkan model boosting yang lebih adaptif terhadap pola temporal dan non-linear.
 
 GLM digunakan sebagai baseline interpretatif, tetapi hasilnya cenderung lebih rapuh pada data dengan skewness tinggi dan varian yang besar. Pada kondisi data asuransi kesehatan yang sangat fluktuatif, tree-based ensemble model lebih stabil dan lebih cocok untuk menangkap pola kompleks.
 
